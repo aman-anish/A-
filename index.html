@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Useful Tools & Songs</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      background-color: #121212;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px 20px;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      font-size: 2em;
+      color: #00ffcc;
+    }
+
+    .note {
+      font-size: 14px;
+      color: #fff;
+      background: rgba(0, 255, 255, 0.1);
+      padding: 10px 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+      animation: fadeIn 2s ease forwards;
+      margin-bottom: 25px;
+      display: inline-block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .link-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 800px;
+      margin: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    a.tool-link {
+      display: block;
+      padding: 15px;
+      background-color: #1e1e1e;
+      color: #00ffcc;
+      text-decoration: none;
+      border-radius: 10px;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    a.tool-link:hover {
+      background-color: #333;
+      transform: scale(1.03);
+    }
+
+    i {
+      margin-right: 10px;
+    }
+
+    /* Snowfall */
+    .snowflake {
+      position: fixed;
+      top: -10px;
+      color: white;
+      font-size: 1em;
+      user-select: none;
+      pointer-events: none;
+      z-index: 0;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+    }
+
+    /* Floating Instagram Button */
+    .insta-btn {
+      position: fixed;
+      background: #e1306c;
+      color: white;
+      padding: 8px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      z-index: 10;
+      box-shadow: 0 0 10px #e1306c;
+      transition: background 0.3s ease;
+    }
+
+    .insta-btn i {
+      margin-right: 5px;
+    }
+
+    .insta-btn:hover {
+      background: #c8235e;
+    }
+
+    .pulse {
+      animation: pulseEffect 0.6s ease;
+    }
+
+    @keyframes pulseEffect {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+      100% { transform: scale(1); }
+    }
+
+    /* Loader */
+    #loader-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.8);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 100;
+    }
+
+    .loader {
+      width: 80px;
+      height: 80px;
+      position: relative;
+    }
+
+    .loader-outter,
+    .loader-inner {
+      position: absolute;
+      border: 4px solid;
+      border-radius: 50%;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    }
+
+    .loader-outter {
+      width: 100%;
+      height: 100%;
+      border-left-color: transparent;
+      border-image: linear-gradient(45deg, #00f0ff, #ff00f7) 1;
+      animation: spin 1.2s ease-in-out infinite;
+    }
+
+    .loader-inner {
+      width: 40px;
+      height: 40px;
+      border-top-color: transparent;
+      border-image: linear-gradient(135deg, #ffea00, #ff0055) 1;
+      animation: spin-reverse 1.2s ease-in-out infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: translate(-50%, -50%) rotate(0deg); }
+      100% { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
+    @keyframes spin-reverse {
+      0% { transform: translate(-50%, -50%) rotate(0deg); }
+      100% { transform: translate(-50%, -50%) rotate(-360deg); }
+    }
+  </style>
+</head>
+<body>
+  <h1>My Tools & Songs Collection</h1>
+  <div class="note">Note: Use PC for better experience</div>
+
+  <div class="link-container">
+    <a class="tool-link" href="https://bihari15.github.io/AA.com/qr-code-generator.html">
+      <i class="fas fa-qrcode"></i> QR Code Generator
+    </a>
+    <a class="tool-link" href="https://bihari15.github.io/AA.com/image-size-reducer.html">
+      <i class="fas fa-compress-alt"></i> Image Size Reducer
+    </a>
+    <a class="tool-link" href="https://bihari15.github.io/AA.com/pdf-maker.html">
+      <i class="fas fa-file-pdf"></i> PDF Maker
+    </a>
+    <a class="tool-link" href="https://aman-anish.github.io/songs/romantic.html">
+      <i class="fas fa-heart"></i> Romantic Songs
+    </a>
+    <a class="tool-link" href="https://aman-anish.github.io/songs/sad.html">
+      <i class="fas fa-face-sad-tear"></i> Sad Songs
+    </a>
+    <a class="tool-link" href="https://aman-anish.github.io/songs/bhojpuri.html">
+      <i class="fas fa-music"></i> Bhojpuri Songs
+    </a>
+  </div>
+
+  <!-- Floating Instagram Button -->
+  <a class="insta-btn" id="floatingInsta">
+    <i class="fab fa-instagram"></i> Follow Us
+  </a>
+
+  <!-- Loader Overlay -->
+  <div id="loader-overlay">
+    <div class="loader">
+      <div class="loader-outter"></div>
+      <div class="loader-inner"></div>
+    </div>
+  </div>
+
+  <script>
+    // Snowfall
+    function createSnowflake() {
+      const snowflake = document.createElement("div");
+      snowflake.classList.add("snowflake");
+      snowflake.textContent = "❄";
+      snowflake.style.left = Math.random() * window.innerWidth + "px";
+      snowflake.style.animationDuration = (Math.random() * 5 + 5) + "s";
+      snowflake.style.fontSize = (Math.random() * 10 + 10) + "px";
+      snowflake.style.opacity = Math.random();
+      document.body.appendChild(snowflake);
+      setTimeout(() => snowflake.remove(), 10000);
+    }
+    setInterval(createSnowflake, 120);
+
+    // Floating Instagram Button
+    const instaBtn = document.getElementById('floatingInsta');
+    let posX = 50, posY = 50;
+    let speedX = 0.3, speedY = 0.2;
+
+    function floatInsta() {
+      const w = window.innerWidth - instaBtn.offsetWidth;
+      const h = window.innerHeight - instaBtn.offsetHeight;
+
+      posX += speedX;
+      posY += speedY;
+
+      if (posX <= 0 || posX >= w) speedX *= -1;
+      if (posY <= 0 || posY >= h) speedY *= -1;
+
+      instaBtn.style.left = posX + "px";
+      instaBtn.style.top = posY + "px";
+
+      requestAnimationFrame(floatInsta);
+    }
+
+    instaBtn.style.position = "fixed";
+    floatInsta();
+
+    // Loader for tool links
+    const links = document.querySelectorAll("a.tool-link");
+    const loaderOverlay = document.getElementById("loader-overlay");
+
+    links.forEach(link => {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        const url = this.href;
+        loaderOverlay.style.display = "flex";
+        setTimeout(() => {
+          window.location.href = url;
+        }, 2500);
+      });
+    });
+
+    // Loader for Instagram button
+    instaBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      this.classList.add("pulse");
+      loaderOverlay.style.display = "flex";
+      setTimeout(() => {
+        window.open("https://www.instagram.com/trending_now25/", "_blank");
+        loaderOverlay.style.display = "none";
+        this.classList.remove("pulse");
+      }, 2500);
+    });
+  </script>
+</body>
+</html>

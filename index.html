@@ -3,14 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <title>Useful Tools & Songs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     body {
+      margin: 0;
       background-color: #121212;
       color: #fff;
       font-family: Arial, sans-serif;
       text-align: center;
-      padding: 40px 20px;
+      padding: 30px 10px;
       overflow-x: hidden;
     }
 
@@ -22,7 +24,6 @@
 
     .note {
       font-size: 14px;
-      color: #fff;
       background: rgba(0, 255, 255, 0.1);
       padding: 10px 20px;
       border-radius: 8px;
@@ -39,22 +40,20 @@
 
     .link-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      max-width: 800px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+      max-width: 900px;
       margin: auto;
-      position: relative;
-      z-index: 1;
     }
 
     a.tool-link {
-      display: block;
       padding: 15px;
       background-color: #1e1e1e;
       color: #00ffcc;
       text-decoration: none;
       border-radius: 10px;
       transition: background 0.3s, transform 0.2s;
+      font-size: 16px;
     }
 
     a.tool-link:hover {
@@ -63,10 +62,10 @@
     }
 
     i {
-      margin-right: 10px;
+      margin-right: 8px;
     }
 
-    /* Snowfall */
+    /* Snow */
     .snowflake {
       position: fixed;
       top: -10px;
@@ -83,7 +82,7 @@
       100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
     }
 
-    /* Floating Instagram Button */
+    /* Insta Floating */
     .insta-btn {
       position: fixed;
       background: #e1306c;
@@ -200,12 +199,12 @@
     </a>
   </div>
 
-  <!-- Floating Instagram Button -->
+  <!-- Insta Button -->
   <a class="insta-btn" id="floatingInsta">
-    <i class="fab fa-instagram"></i> Follow Us
+    <i class="fab fa-instagram"></i> @trending_now25
   </a>
 
-  <!-- Loader Overlay -->
+  <!-- Loader -->
   <div id="loader-overlay">
     <div class="loader">
       <div class="loader-outter"></div>
@@ -228,10 +227,10 @@
     }
     setInterval(createSnowflake, 120);
 
-    // Floating Instagram Button
+    // Floating Insta Button
     const instaBtn = document.getElementById('floatingInsta');
-    let posX = 50, posY = 50;
-    let speedX = 0.3, speedY = 0.2;
+    let posX = 20, posY = 20;
+    let speedX = 0.25, speedY = 0.15;
 
     function floatInsta() {
       const w = window.innerWidth - instaBtn.offsetWidth;
@@ -252,7 +251,7 @@
     instaBtn.style.position = "fixed";
     floatInsta();
 
-    // Loader for tool links
+    // Loader logic
     const links = document.querySelectorAll("a.tool-link");
     const loaderOverlay = document.getElementById("loader-overlay");
 
@@ -267,7 +266,7 @@
       });
     });
 
-    // Loader for Instagram button
+    // Insta click animation + loader
     instaBtn.addEventListener("click", function (e) {
       e.preventDefault();
       this.classList.add("pulse");
